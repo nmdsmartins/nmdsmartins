@@ -41,8 +41,8 @@ namespace Blueprism
 
                 Console.WriteLine(string.Join("-", chain));
             }
-
-            Console.WriteLine("Sorry but the target word could reached!");
+            else
+                Console.WriteLine("Sorry but the target word could reached!");
         }
     }
 }
