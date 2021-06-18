@@ -1,48 +1,57 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
 namespace Blueprism
 {
     class Program
     {
-        private static string[] _words = {
-            "yore", "wire", "tore", "tire", "sure", "star", "sort", "sore", "sorb", "sole", "size", "sire", "side",
-            "more", "mire", "lore", "iore", "hire", "hike", "gore", "fire", "dire", "core", "bore"
-        };
-
         static void Main(string[] args)
         {
-            var start = "hide";
-            var end = "sort";
-            var dictionary = _words.OrderBy(w => w);
-            var word = new Word { Level = 0, Source = start };
-            var finder = new RegexWordFinder();
-            
-            finder.Find(new Entry
+            var arguments = new Arguments(args);
+            var start = arguments.Start;
+            var end = arguments.End;
+            var dictionary = new WordDictionaryReader(arguments.DictionaryPath)
+                .LoadDictionary(Settings.MaxLength);
+
+            new ArgumentValidator().Validate(arguments, dictionary);
+
+            var finder = new WordFinderFactory().GetWordFinder();
+            var watch = new Stopwatch();
+
+            watch.Start();
+
+            Console.Write($"Searching between «{start}» and «{end}»...");
+
+            var winner = finder.Find(new Search
             {
-                Word = word,
+                Source = start,
                 Target = end,
                 Dictionary = dictionary.ToList()
             });
-
-            var winner = finder.Winner;
-            if(winner != null)
+            
+            if (winner != null)
             {
-                var chain = new string[winner.Level + 1];
-
-                chain[0] = start;
-
+                var iteration = winner.Level;
+                var chain = new List<string>();
                 while (winner.Parent != null)
                 {
-                    chain[winner.Level] = winner.Source;
+                    chain.Add(winner.Value);
 
                     winner = winner.Parent;
                 }
 
-                Console.WriteLine(string.Join("-", chain));
+                chain.Add(winner.Value);
+                chain.Reverse();
+
+                Console.WriteLine("\n\nFound chain at the {1}th iteration: {0}", string.Join("-", chain), iteration);
             }
             else
                 Console.WriteLine("Sorry but the target word could reached!");
+
+            Console.WriteLine();
+            Console.WriteLine($"It tooked {watch.Elapsed} to fulfill the search...");
         }
     }
 }
