@@ -11,7 +11,7 @@ For example:
 having the word **cast**, perform the following:
 
  1. look for words in the dictionary with the pattern **.ast**, then **c.st**, then **ca.t** and then **cas.**
- 2. Write down all the found words on every iteration
+ 2. Write down all the found words on every pattern
  3. Repeat the process for every word found and so on until the target word is found
 
 There are 2 things we need to worry about. The first one is to avoid finding already found words so we need to discard those as we go on. The second one is to somehow keep the connection between words so that when we find the target word we can navigate from that word back to the start word.
