@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace Blueprism
+namespace Wordladder
 {
     /// <summary>
     /// Handles application validation 

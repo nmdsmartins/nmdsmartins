@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Blueprism\Blueprism.csproj" />
+    <ProjectReference Include="..\Wordladder\Wordladder.csproj" />
   </ItemGroup>
 
 </Project>

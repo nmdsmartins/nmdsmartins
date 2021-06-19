@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Blueprism
+namespace Wordladder
 {
     /// <summary>
     /// Represents the entry parameters for a word search

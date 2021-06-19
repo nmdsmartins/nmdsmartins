@@ -1,4 +1,4 @@
-﻿namespace Blueprism
+﻿namespace Wordladder
 {
     /// <summary>
     /// When implemented takes care of finding the end word

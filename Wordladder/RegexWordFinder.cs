@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Text.RegularExpressions;
 
-namespace Blueprism
+namespace Wordladder
 {
     /// <summary>
     /// Represents a word finder based on regular expressions

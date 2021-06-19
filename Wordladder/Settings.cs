@@ -1,4 +1,4 @@
-﻿namespace Blueprism
+﻿namespace Wordladder
 {
     /// <summary>
     /// Holds application settings

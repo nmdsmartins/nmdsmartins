@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Wordladder": {
+      "commandName": "Project",
+      "commandLineArgs": "-s else -e safe -d:\"words-english.txt\" -o:\"c:\\temp\\outputfile.txt\""
+    }
+  }
+}

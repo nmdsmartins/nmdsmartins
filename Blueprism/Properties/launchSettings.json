@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "Blueprism": {
-      "commandName": "Project",
-      "commandLineArgs": "-s hide -e sort -d:\"words-english.txt\" -o:\"c:\\temp\\outputfile.txt\""
-    }
-  }
-}

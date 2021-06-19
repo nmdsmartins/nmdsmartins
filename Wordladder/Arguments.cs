@@ -2,7 +2,7 @@
 using System.Linq;
 using CommandLineArgsHelpers;
 
-namespace Blueprism
+namespace Wordladder
 {
     /// <summary>
     /// Strong type class that represents all the application's available arguments

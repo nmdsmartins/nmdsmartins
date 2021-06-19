@@ -1,7 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace Blueprism
+namespace Wordladder
 {
     class Program
     {
@@ -10,12 +11,12 @@ namespace Blueprism
             var arguments = new Arguments(args);
             var start = arguments.Start;
             var end = arguments.End;
-            var dictionary = new WordDictionaryReader(arguments.DictionaryFilePath)
+            var dictionary = new WordDictionaryReader(arguments.DictionaryFilePath) //SRP
                 .LoadDictionary(Settings.MaxLength);
 
-            new ArgumentValidator().Validate(arguments, dictionary);
+            new ArgumentValidator().Validate(arguments, dictionary); //SRP
 
-            var finder = new WordFinderFactory().GetWordFinder();
+            var finder = new WordFinderFactory().CreateWordFinder(); //SRP
             var watch = new Stopwatch();
 
             watch.Start();
@@ -25,18 +26,23 @@ namespace Blueprism
             var winner = finder.Find(arguments.ToSearch(dictionary));
             
             if (winner != null)
-            {
-                var chain = winner.BuildChain();
-                new OutputFileWriter(chain)
-                    .WriteToFile(arguments.OutputFilePath);
-
-                Console.WriteLine("\n\nFound chain at the {1}th iteration: {0}", string.Join("-", chain), winner.Level);
-            }
+                //OCP
+                new OutputWriter(winner)
+                    .WriteOutput(CreateWriters(arguments.OutputFilePath));
             else
                 Console.WriteLine("Sorry but the target word could reached!");
 
             Console.WriteLine();
             Console.WriteLine($"It took {watch.Elapsed} to fulfill the search...");
+        }
+
+        private static IEnumerable<IWordOutputWriter> CreateWriters(string outputFilePath)
+        {
+            return new List<IWordOutputWriter>
+            {
+                new StdOutWordChainWriter(),
+                new FileWordOutputWriter(outputFilePath)
+            };
         }
     }
 }

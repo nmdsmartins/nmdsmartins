@@ -1,8 +1,8 @@
 using Xunit;
 
-namespace Blueprism.UnitTests
+namespace Wordladder.UnitTests
 {
-    public class WordTests
+    public class ArgumentTests
     {
         [Fact]
         public void Test1()

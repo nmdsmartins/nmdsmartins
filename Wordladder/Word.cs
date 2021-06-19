@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Blueprism
+namespace Wordladder
 {
     /// <summary>
     /// Word structure representation with connected child words
