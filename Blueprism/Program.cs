@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 
 namespace Blueprism
 {
@@ -12,7 +10,7 @@ namespace Blueprism
             var arguments = new Arguments(args);
             var start = arguments.Start;
             var end = arguments.End;
-            var dictionary = new WordDictionaryReader(arguments.DictionaryPath)
+            var dictionary = new WordDictionaryReader(arguments.DictionaryFilePath)
                 .LoadDictionary(Settings.MaxLength);
 
             new ArgumentValidator().Validate(arguments, dictionary);
@@ -24,34 +22,21 @@ namespace Blueprism
 
             Console.Write($"Searching between «{start}» and «{end}»...");
 
-            var winner = finder.Find(new Search
-            {
-                Source = start,
-                Target = end,
-                Dictionary = dictionary.ToList()
-            });
+            var winner = finder.Find(arguments.ToSearch(dictionary));
             
             if (winner != null)
             {
-                var iteration = winner.Level;
-                var chain = new List<string>();
-                while (winner.Parent != null)
-                {
-                    chain.Add(winner.Value);
+                var chain = winner.BuildChain();
+                new OutputFileWriter(chain)
+                    .WriteToFile(arguments.OutputFilePath);
 
-                    winner = winner.Parent;
-                }
-
-                chain.Add(winner.Value);
-                chain.Reverse();
-
-                Console.WriteLine("\n\nFound chain at the {1}th iteration: {0}", string.Join("-", chain), iteration);
+                Console.WriteLine("\n\nFound chain at the {1}th iteration: {0}", string.Join("-", chain), winner.Level);
             }
             else
                 Console.WriteLine("Sorry but the target word could reached!");
 
             Console.WriteLine();
-            Console.WriteLine($"It tooked {watch.Elapsed} to fulfill the search...");
+            Console.WriteLine($"It took {watch.Elapsed} to fulfill the search...");
         }
     }
 }

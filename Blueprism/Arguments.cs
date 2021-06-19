@@ -28,7 +28,7 @@ namespace Blueprism
         /// <summary>
         /// Gets the dictionary file path
         /// </summary>
-        public string DictionaryPath => args["d"] ?? throw  new ArgumentException("d", "The dictionary file argument is required!");
+        public string DictionaryFilePath => args["d"] ?? throw  new ArgumentException("d", "The dictionary file argument is required!");
         /// <summary>
         /// Gets the output file path
         /// </summary>

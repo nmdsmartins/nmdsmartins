@@ -27,6 +27,13 @@ namespace Blueprism
             Parent = parent;
         }
         /// <summary>
+        /// Creates a new word based on another word.
+        /// </summary>
+        /// <param name="source"></param>
+        public Word(Word source):this(source.Value, source.Level, source.Parent)
+        {
+        }
+        /// <summary>
         /// Creates an empty word
         /// </summary>
         public Word() 
