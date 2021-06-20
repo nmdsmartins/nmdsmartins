@@ -1,4 +1,5 @@
 
+
 # Word ladder test
 I have been presented with the challenge of coming up with a solution tosolve the following problem: Being given a start and an target word, I need to build a ladder of words starting from the start word, by changing one character between words until it reaches the target word based on a supplied word dictionary file. 
 
@@ -34,7 +35,9 @@ There are 2 things we need to worry about. The first one is to avoid finding alr
 To run the program using the command line, set the parameters like for example:
 
     wordladder.exe -s:else -e:safe -d:"words-english.txt" -o:"c:\temp\outputfile.txt"
-  
+								Or
+    dotnet run wordladder.csproj -s:else -e:safe -d:"words-english.txt" -o:"c:\temp\outputfile.txt"
+    
 - -s = Start word
 - -e = End/Target word
 - -d = Word dictionary file path
