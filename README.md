@@ -18,7 +18,7 @@ There are 2 things we need to worry about. The first one is to avoid finding alr
 
 ## The algorithm
 
- - To perform the finding of the end or target word without knowing how many words we are going to find a long the way, we need to somehow iterate over a growing loop to avoid going into a recursive algorithm. We need to iterate over the length of the array of words that are being found as we move forward.
+ - To perform the finding of the end or target word without knowing how many words we are going to find a long the way, we need to somehow iterate over a growing loop to avoid going into a recursive algorithm which would have slower performance. We need to iterate over the length of the array of words that are being found as we move forward.
  - Next step is to iterate over the current word using regular expressions and look for every word in the dictionary except the ones that have already been found, matching the expression and finally iterate over every found word, add it to the found/ignored words. Do this until the end or target word is found.
  - To be able to go back to the start word, I have created a linked list structure called **Word** that contains the current word and a link to its parent, so that when I find the target word, I can easily navigate back to the start word.
 
