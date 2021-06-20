@@ -35,5 +35,10 @@ To run the program using the command line, set the parameters like for example:
 
     wordladder.exe -s:else -e:safe -d:"words-english.txt" -o:"c:\temp\outputfile.txt"
   
+- -s = Start word
+- -e = End/Target word
+- -d = Word dictionary file path
+- -o = Output file name
+
 Used Nuget packages:
  - Command line helper: [https://github.com/cajuncoding/CommandLineArgsHelper](https://github.com/cajuncoding/CommandLineArgsHelper)
