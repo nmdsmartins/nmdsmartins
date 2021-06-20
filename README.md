@@ -35,7 +35,8 @@ There are 2 things we need to worry about. The first one is to avoid finding alr
 To run the program using the command line, set the parameters like for example:
 
     wordladder.exe -s:else -e:safe -d:"words-english.txt" -o:"c:\temp\outputfile.txt"
-								Or
+Or
+
     dotnet run wordladder.csproj -s:else -e:safe -d:"words-english.txt" -o:"c:\temp\outputfile.txt"
     
 - -s = Start word
