@@ -2,6 +2,9 @@
 
 namespace Wordladder
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public sealed class FileWordOutputWriter : IFileWordOutputWriter
     {
         public string OutputFilePath { get; }
@@ -10,7 +13,10 @@ namespace Wordladder
         {
             OutputFilePath = outputFilePath;
         }
-
+        /// <summary>
+        /// Builds the word ladder and writes it to a file.
+        /// </summary>
+        /// <param name="endWord"></param>
         public void WriteOutput(Word endWord)
         {
             using var writer = new StreamWriter(OutputFilePath);

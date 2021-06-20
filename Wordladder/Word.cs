@@ -11,7 +11,7 @@ namespace Wordladder
         /// Creates a new word based on the specified value
         /// </summary>
         /// <param name="value">Word value</param>
-        public Word(string value) : this()
+        public Word(string value)
         {
             Value = value;
         }
@@ -34,13 +34,6 @@ namespace Wordladder
         {
         }
         /// <summary>
-        /// Creates an empty word
-        /// </summary>
-        public Word() 
-        {
-            Children = new List<Word>();
-        }
-        /// <summary>
         /// Gets or sets the iteration level
         /// </summary>
         public int Level { get; set; }
@@ -52,9 +45,5 @@ namespace Wordladder
         /// Gets or sets the value
         /// </summary>
         public string Value { get; set; }
-        /// <summary>
-        /// Gets or sets the children words
-        /// </summary>
-        public List<Word> Children { get; set; }
     }
 }

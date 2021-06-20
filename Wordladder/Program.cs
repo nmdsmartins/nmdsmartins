@@ -11,12 +11,14 @@ namespace Wordladder
             var arguments = new Arguments(args);
             var start = arguments.Start;
             var end = arguments.End;
+            #region SRP
             var dictionary = new WordDictionaryReader(arguments.DictionaryFilePath) //SRP
                 .LoadDictionary(Settings.MaxLength);
-
             new ArgumentValidator().Validate(arguments, dictionary); //SRP
-
-            var finder = new WordFinderFactory().CreateWordFinder(); //SRP
+            #endregion
+            #region DIP
+            var finder = new WordFinderFactory().CreateWordFinder(); //DIP
+            #endregion
             var watch = new Stopwatch();
 
             watch.Start();
@@ -24,11 +26,13 @@ namespace Wordladder
             Console.Write($"Searching between «{start}» and «{end}»...");
 
             var winner = finder.Find(arguments.ToSearch(dictionary));
-            
+
             if (winner != null)
+            #region OCP
                 //OCP
                 new OutputWriter(winner)
                     .WriteOutput(CreateWriters(arguments.OutputFilePath));
+            #endregion
             else
                 Console.WriteLine("Sorry but the target word could reached!");
 
