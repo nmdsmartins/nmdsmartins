@@ -1,9 +1,9 @@
 
 # Word ladder test
-I have been presented with the challenge of coming up with a solution for the problem that starts from being given a start and an end word to build a ladder of words from the start word by changing one character between words until it reaches the end word based on a supplied word dictionary file. 
+I have been presented with the challenge of coming up with a solution tosolve the following problem: Being given a start and an target word, I need to build a ladder of words starting from the start word, by changing one character between words until it reaches the target word based on a supplied word dictionary file. 
 
 ## First step to solve the problem
-To be able to solve the problem by writing down an algorithm, I must first try to solve the problem by myself. So I have taken a subset of words, paste them into Notepad++ and then tried to figure out a way to go from the start to the end word.
+To be able to solve the problem by writing down an algorithm, I must first try to solve the problem by myself. So I have taken a subset of words, paste them into Notepad++ and then tried to figure out a way to go from the start to the target word.
 
 I immediately thought about using regular expressions to iterate over every found word's characters by replacing them with the *any character pattern* and then writing down every word found by that expression.
 
@@ -14,12 +14,12 @@ having the word **cast**, perform the following:
  2. Write down all the found words on every iteration
  3. Repeat the process for every word found and so on until the target word is found
 
-There are 2 things we need to worry about. The first one is to avoid finding already found words so we need to ignore those as we go on and the second one is to somehow keep the connection between words so that when we find the target word we can navigate back to the start word.
+There are 2 things we need to worry about. The first one is to avoid finding already found words so we need to ignore those as we go on. The second thing is to some how keep the connection between words so that when we find the target word we can navigate back to the start word.
 
 ## The algorithm
 
- - To perform the finding of the end or target word without knowing how many words we are going to find a long the way, we need to somehow iterate over a growing loop to avoid going into a recursive algorithm which would have slower performance. We need to iterate over the length of the array of words that are being found as we move forward.
- - Next step is to iterate over the current word using regular expressions and look for every word in the dictionary except the ones that have already been found, matching the expression and finally iterate over every found word, add it to the found/ignored words. Do this until the end or target word is found.
+ - To perform the finding of the target word without knowing how many words we are going to find a long the way, we need to somehow iterate over a growing loop to avoid going into a recursive algorithm which might have slower performance. We need to iterate over the length of the array of words that are being found as we move forward.
+ - Next step is to iterate over the current word using regular expressions and look for every word in the dictionary except the ones that have already been found, matching the expression and finally iterate over every found word, add it to the found/ignored words. Do this until the or target word is found.
  - To be able to go back to the start word, I have created a linked list structure called **Word** that contains the current word and a link to its parent, so that when I find the target word, I can easily navigate back to the start word.
 
 ## Code techniques and patterns
