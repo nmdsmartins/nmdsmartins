@@ -2,7 +2,7 @@
 
 namespace Wordladder
 {
-    public sealed class StdOutWordChainWriter : IWordOutputWriter
+    public sealed class StdOutWordOutputWriter : IWordOutputWriter
     {
         /// <summary>
         /// Builds the word ladder and prints it to the standard output.

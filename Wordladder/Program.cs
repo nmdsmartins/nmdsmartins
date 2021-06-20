@@ -12,7 +12,7 @@ namespace Wordladder
             var start = arguments.Start;
             var end = arguments.End;
             #region SRP
-            var dictionary = new WordDictionaryReader(arguments.DictionaryFilePath) //SRP
+            var dictionary = new WordDictionaryLoader(arguments.DictionaryFilePath) //SRP
                 .LoadDictionary(Settings.MaxLength);
             new ArgumentValidator().Validate(arguments, dictionary); //SRP
             #endregion
@@ -44,7 +44,7 @@ namespace Wordladder
         {
             return new List<IWordOutputWriter>
             {
-                new StdOutWordChainWriter(),
+                new StdOutWordOutputWriter(),
                 new FileWordOutputWriter(outputFilePath)
             };
         }

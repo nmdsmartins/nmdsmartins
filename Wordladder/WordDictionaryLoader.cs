@@ -7,14 +7,14 @@ namespace Wordladder
     /// <summary>
     /// Class responsible for reading a word dictionary from a supplied file path
     /// </summary>
-    public class WordDictionaryReader
+    public class WordDictionaryLoader
     {
         private readonly string _filePath;
         /// <summary>
         /// Creates a new word dictionary reader from the specified path
         /// </summary>
         /// <param name="filePath"></param>
-        public WordDictionaryReader(string filePath)
+        public WordDictionaryLoader(string filePath)
         {
             _filePath = filePath;
         }

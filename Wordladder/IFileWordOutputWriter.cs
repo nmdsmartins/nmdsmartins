@@ -1,5 +1,6 @@
 ﻿namespace Wordladder
 {
+    #region ISP
     /// <summary>
     /// Handles file word writer
     /// </summary>
@@ -7,4 +8,6 @@
     {
         public string OutputFilePath { get; }
     }
+
+    #endregion
 }
