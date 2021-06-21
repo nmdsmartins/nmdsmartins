@@ -1,7 +1,7 @@
 
 
 # Word ladder test
-I have been presented with the challenge of coming up with a solution tosolve the following problem: Being given a start and an target word, I need to build a ladder of words starting from the start word, by changing one character between words until it reaches the target word based on a supplied word dictionary file. 
+I have been presented with the challenge of coming up with a solution to solve the following problem: Being given a start and an target word, I need to build a ladder of words starting from the start word, by changing one character between words until it reaches the target word based on a supplied word dictionary file. 
 
 ## First step to solve the problem
 To be able to solve the problem by writing down an algorithm, I must first try to solve the problem by myself. So I have taken a subset of words, paste them into Notepad++ and then tried to figure out a way to go from the start to the target word.
