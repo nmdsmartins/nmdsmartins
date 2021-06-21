@@ -1,6 +1,7 @@
 ﻿using System;
+using Wordladder.Core;
 
-namespace Wordladder
+namespace Wordladder.Output
 {
     public sealed class StdOutWordOutputWriter : IWordOutputWriter
     {

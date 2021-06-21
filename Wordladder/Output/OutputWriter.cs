@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using System.IO;
+using Wordladder.Core;
 
-namespace Wordladder
+namespace Wordladder.Output
 {
     /// <summary>
     /// Handles the creation of the output file

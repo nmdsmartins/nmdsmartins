@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using Wordladder.Core;
+using Wordladder.Input;
+using Wordladder.Output;
+using Wordladder.Validation;
 
 namespace Wordladder
 {

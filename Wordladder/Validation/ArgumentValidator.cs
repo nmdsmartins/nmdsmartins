@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Linq;
+using Wordladder.Input;
 
-namespace Wordladder
+namespace Wordladder.Validation
 {
     /// <summary>
     /// Handles application validation 

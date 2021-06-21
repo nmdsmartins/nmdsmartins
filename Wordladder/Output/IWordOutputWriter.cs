@@ -1,4 +1,6 @@
-﻿namespace Wordladder
+﻿using Wordladder.Core;
+
+namespace Wordladder.Output
 {
     /// <summary>
     /// When implemented handles end word output writing

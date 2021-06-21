@@ -1,4 +1,6 @@
-﻿namespace Wordladder
+﻿using Wordladder.Input;
+
+namespace Wordladder.Core
 {
     /// <summary>
     /// When implemented takes care of finding the end word

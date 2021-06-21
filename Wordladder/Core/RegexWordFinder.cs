@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Wordladder.Input;
 
-namespace Wordladder
+namespace Wordladder.Core
 {
     /// <summary>
     /// Represents a word finder based on regular expressions

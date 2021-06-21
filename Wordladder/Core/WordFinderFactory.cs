@@ -1,4 +1,4 @@
-﻿namespace Wordladder
+﻿namespace Wordladder.Core
 {
     /// <summary>
     /// Handles the provisioning of the word finder.

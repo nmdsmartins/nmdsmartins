@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Wordladder.Core;
+using Wordladder.Input;
 
 namespace Wordladder
 {

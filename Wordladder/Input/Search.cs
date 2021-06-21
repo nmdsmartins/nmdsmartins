@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Wordladder
+namespace Wordladder.Input
 {
     /// <summary>
     /// Represents the entry parameters for a word search

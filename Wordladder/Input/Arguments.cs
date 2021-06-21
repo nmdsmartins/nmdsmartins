@@ -2,7 +2,7 @@
 using System.Linq;
 using CommandLineArgsHelpers;
 
-namespace Wordladder
+namespace Wordladder.Input
 {
     /// <summary>
     /// Strong type class that represents all the application's available arguments

@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Wordladder
+﻿namespace Wordladder.Core
 {
     /// <summary>
     /// Word structure representation with connected child words

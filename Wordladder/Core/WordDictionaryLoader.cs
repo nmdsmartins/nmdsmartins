@@ -2,7 +2,7 @@
 using System.IO;
 using System.Linq;
 
-namespace Wordladder
+namespace Wordladder.Core
 {
     /// <summary>
     /// Class responsible for reading a word dictionary from a supplied file path

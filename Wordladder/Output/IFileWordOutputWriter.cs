@@ -1,4 +1,4 @@
-﻿namespace Wordladder
+﻿namespace Wordladder.Output
 {
     #region ISP
     /// <summary>

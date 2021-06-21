@@ -1,6 +1,7 @@
 ﻿using System.IO;
+using Wordladder.Core;
 
-namespace Wordladder
+namespace Wordladder.Output
 {
     /// <summary>
     /// 

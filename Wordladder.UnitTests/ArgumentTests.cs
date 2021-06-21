@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using Wordladder.Input;
+using Wordladder.Validation;
 using Xunit;
 
 namespace Wordladder.UnitTests
